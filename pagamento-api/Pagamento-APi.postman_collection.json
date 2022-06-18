@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "ac46c292-3e65-48ed-acc5-fed4f623734c",
+		"name": "Pagamento-APi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4020582"
+	},
+	"item": [
+		{
+			"name": "Find ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/pagamento/venda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"pagamento",
+						"venda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Incluir",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\":\"2022-10-07\",\r\n    \"produtos\": [\r\n        {\r\n          \"produtoId\": 10,\r\n          \"quantidade\":5\r\n        },\r\n        {\r\n          \"produtoId\": 10,\r\n          \"quantidade\":5\r\n        }\r\n    ],\r\n    \"valorTotal\":200\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/pagamento/venda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"pagamento",
+						"venda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find ALL Filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/pagamento/venda?orderBy=estoque",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"pagamento",
+						"venda"
+					],
+					"query": [
+						{
+							"key": "orderBy",
+							"value": "estoque"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All Filter Completo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/pagamento/venda?page=0&size=5&sort=data,asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"pagamento",
+						"venda"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						},
+						{
+							"key": "sort",
+							"value": "data,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

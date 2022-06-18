@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:h2db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+  application:
+    name: auth
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+  jmx:
+    enabled: false
+
+server:
+  port: 8083
+  servlet:
+    context-path: /auth
+
+security:
+  jwt:
+    token:
+      secret-key: chave_microservices
+      expire-length: 36000
+
+
