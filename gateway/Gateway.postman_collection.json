@@ -1,42 +1,13 @@
 {
 	"info": {
-		"_postman_id": "6ed90de9-eafe-41f9-805b-bd1d5551c0f3",
-		"name": "Auth-Api",
+		"_postman_id": "9e63d78a-5a5c-4b7d-aa31-2d250e0e934f",
+		"name": "Gateway",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "4020582"
 	},
 	"item": [
 		{
-			"name": "Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"userName\":\"admin\",\r\n    \"password\": \"admin\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8083/auth/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8083",
-					"path": [
-						"auth",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gateway",
+			"name": "Gateway LOGIN",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -61,6 +32,50 @@
 						"v1",
 						"auth",
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway Find All Pagamento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pagamento/venda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pagamento",
+						"venda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway Find All Produto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/produto/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"produto",
+						"produtos"
 					]
 				}
 			},
