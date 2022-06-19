@@ -49,13 +49,13 @@ public class Usuario implements Serializable, UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.getPermissoes();
+        return this.permissoes;
     }
 
     public List<String> getRoles(){
         List<String> roles = new ArrayList<>();
         this.permissoes.stream()
-                .map(permissao ->
+                .forEach(permissao ->
                         roles.add(permissao.getDescricao())
                 );
         return roles;

@@ -1,12 +1,9 @@
 package com.example.auth.security.filter;
 
 import com.example.auth.security.jwt.JwtTokenProvider;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.util.ObjectUtils;
-import org.springframework.util.StringUtils;
 import org.springframework.web.filter.GenericFilterBean;
 
 import javax.servlet.FilterChain;
@@ -21,19 +18,22 @@ public class JwtTokenFilter extends GenericFilterBean {
     private final JwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    public JwtTokenFilter(JwtTokenProvider jwtTokenProvider){
+    public JwtTokenFilter(JwtTokenProvider jwtTokenProvider) {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
+
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        String token = jwtTokenProvider.resolveToken((HttpServletRequest) servletRequest );
-        if(StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)){
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
+        String token = jwtTokenProvider.resolveToken((HttpServletRequest) request);
+
+        if(token != null && jwtTokenProvider.validateToken(token)) {
             Authentication auth = jwtTokenProvider.getAuthentication(token);
-            if(!ObjectUtils.isEmpty(auth)){
+            if(auth != null) {
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
         }
-        filterChain.doFilter(servletRequest,servletResponse);
+        chain.doFilter(request, response);
     }
 }

@@ -18,21 +18,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final JwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    private UserDetailsService userDetailsService;
-
-    @Autowired
-    public SecurityConfig(JwtTokenProvider jwtTokenProvider){
+    public SecurityConfig(JwtTokenProvider jwtTokenProvider) {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
     @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
+    public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
     @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
+    public AuthenticationManager authenticationManagerBean()  throws Exception {
         return super.authenticationManagerBean();
     }
 
@@ -49,7 +46,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and().csrf().ignoringAntMatchers("/h2/**")
                 .and().headers().frameOptions().sameOrigin()
-
           .and()
           .apply(new JwtConfigurer(jwtTokenProvider));
     }
