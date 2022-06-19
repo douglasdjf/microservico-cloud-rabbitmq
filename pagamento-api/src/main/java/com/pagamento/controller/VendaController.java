@@ -3,6 +3,7 @@ package com.pagamento.controller;
 import com.pagamento.domain.service.VendaService;
 import com.pagamento.dto.VendaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -19,6 +20,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/venda")
 public class VendaController {
+
+    @Value("${server.port}")
+    String port;
 
     @Autowired
     private VendaService vendaService;
