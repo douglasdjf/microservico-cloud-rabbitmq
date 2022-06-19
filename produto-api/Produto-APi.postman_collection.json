@@ -33,7 +33,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\":\"Tablet\",\r\n    \"estoque\": 30,\r\n    \"preco\":500.20\r\n}",
+					"raw": "{\r\n    \"nome\":\"Carrinho BEBE\",\r\n    \"estoque\": 30,\r\n    \"preco\":500.20\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -41,14 +41,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/crud/produtos",
+					"raw": "http://localhost:8081/produto/produtos",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"crud",
+						"produto",
 						"produtos"
 					]
 				}

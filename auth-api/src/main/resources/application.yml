@@ -32,4 +32,11 @@ security:
       secret-key: chave_microservices
       expire-length: 36000
 
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/registry/eureka
+
 
