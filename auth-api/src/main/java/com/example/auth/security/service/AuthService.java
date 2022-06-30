@@ -25,8 +25,7 @@ public class AuthService {
     private JwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
-
+    private  UsuarioRepository usuarioRepository;
 
     public  Map<Object,Object> login(UsuarioDTO usuarioDTO){
 

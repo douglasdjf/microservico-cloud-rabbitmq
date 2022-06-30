@@ -10,15 +10,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@Data
+
 @Builder
 @EqualsAndHashCode
 @ToString
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario implements Serializable, UserDetails {
+
+    private static final long serialVersionUID = -9020973236707102285L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,9 +59,9 @@ public class Usuario implements Serializable, UserDetails {
     public List<String> getRoles(){
         List<String> roles = new ArrayList<>();
         this.permissoes.stream()
-                .forEach(permissao ->
-                        roles.add(permissao.getDescricao())
-                );
+                .forEach( p -> {
+                    roles.add(p.getDescricao());
+                });
         return roles;
     }
 
