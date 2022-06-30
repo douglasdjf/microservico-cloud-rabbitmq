@@ -1,7 +1,5 @@
-package com.example.auth.security.config;
+package com.example.auth.security.jwt;
 
-import com.example.auth.security.filter.JwtTokenFilter;
-import com.example.auth.security.jwt.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
