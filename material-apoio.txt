@@ -1,6 +1,0 @@
-String : https://spring.io/
-Spring Cloud Netflix : https://spring.io/projects/spring-cloud-netflix
-Criar projeto com Spring Boot : https://start.spring.io/
-Projeto Completo : https://github.com/klayrocha/Microservices
-
-
