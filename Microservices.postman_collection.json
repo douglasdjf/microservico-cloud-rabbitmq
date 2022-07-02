@@ -277,6 +277,102 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "gateway",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll Produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQUxMIl0sImlhdCI6MTY1Njc3NTg0NSwiZXhwIjoxNjU2Nzc1ODgxfQ.zPckpYuhwXfOmGSZjxw4MKlYV2sc8fbGayo25z5bI3Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/produto/produtos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll Venda-Pagamento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQUxMIl0sImlhdCI6MTY1Njc3NTkxOSwiZXhwIjoxNjU2Nzc1OTU1fQ.Cf8gyEpYVmcz2r4Ht81Ja1E3Z9mSU54Z6eXf0R1KeLw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/pagamento/venda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"pagamento",
+								"venda"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
