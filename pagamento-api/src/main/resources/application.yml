@@ -46,3 +46,8 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/registry/eureka
 
+security:
+  jwt:
+    token:
+      secret-key: chave_microservices
+

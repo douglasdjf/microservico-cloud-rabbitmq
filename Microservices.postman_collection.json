@@ -10,7 +10,7 @@
 			"name": "auth-api",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "Login",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -66,6 +66,16 @@
 				{
 					"name": "FindAById",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQUxMIl0sImlhdCI6MTY1Njc3NTEwNywiZXhwIjoxNjU2Nzc1MTQzfQ.xCl05BsYGIO3StoSX4koP6pTkluKGCsogtotiid7GKY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -196,6 +206,16 @@
 				{
 					"name": "FindAll Params",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQUxMIl0sImlhdCI6MTY1Njc3NTE4OSwiZXhwIjoxNjU2Nzc1MjI1fQ.F4WU85kNWwOo4s8nWkJWoIlzjC9Wi0anQIRTAZV7F4U",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
